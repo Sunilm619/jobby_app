@@ -1,0 +1,6 @@
+.bg{
+    background-image: url('https://assets.ccbp.in/frontend/react-js/home-lg-bg.png');
+    background-size: cover;
+    height: 88vh;
+    color: aliceblue;
+}

@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Login from "./Components/Login/Login";
+import SIgnup from "./Components/SIgnup/SIgnup";
+import Home from "./Components/Home/Home";
+import Detailedjobs from "./Components/Detailedjobs/Detailedjobs";
+import Sideabar from "./Components/Sideabar/Sideabar";
+import Noroute from "./Components/Noroute/Noroute";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Login />}></Route>
+        <Route path="/login" element={<Login />}></Route>
+        <Route path="/signup" element={<SIgnup />}></Route>
+        <Route path="/home" element={<Home />}></Route>
+        <Route path="/Sidebar" element={<Sideabar />}></Route>
+        <Route path="/details/:id" element={<Detailedjobs />}></Route>
+        <Route path="*" element={<Noroute />}></Route>
+
+      </Routes>
+    </BrowserRouter>
   );
 }
 
